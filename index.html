@@ -35,8 +35,20 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        pointer-events: none;
         height: 100%;
+        pointer-events: none;
+      }
+      #content.immerse {
+        justify-content: end;
+        align-items: end;
+      }
+      .immersive-header,
+      #content.immerse .header-photo,
+      #content.immerse .header-cell {
+        display: none;     
+      }
+      #content.immerse .immersive-header {
+        display: block;
       }
       :root {
         --color-stone-50: #fafaf9;
@@ -77,10 +89,14 @@
         pointer-events: all;
         text-decoration: none;
         border-bottom: solid 1px #fff;
+        cursor: pointer;
       }
       a,
       p {
-        text-shadow: 1px 1px black, #fff 1px 0 5px;
+        text-shadow: 1px 1px black;
+      }
+      a:hover {
+        text-shadow: 1px 1px black, #fff 1px 0 15px;
       }
       .links {
         display: flex;
@@ -108,10 +124,18 @@
           <div class="links">
             <a href="/resume">Resume</a>
             <a href="http://linkedin.com/in/samuelagreene">LinkedIn</a>
+            <a onclick="immerse()">Immerse</button>
           </div>
+        </div>
+        <div class="immersive-header">
+          <a onclick="immerse()">Immerse</button>
         </div>
       </div>
     </div>
+    <script>
+      const immerse = () =>
+        document.querySelector('#content').classList.toggle('immerse')
+    </script>
     <script type="importmap">
       {
         "imports": {

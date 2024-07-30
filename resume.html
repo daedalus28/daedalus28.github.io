@@ -310,7 +310,7 @@
           rgba(0, 0, 0, 0.04) 0px 10px 10px 5px;
         width: 960px;
         margin: 16px auto;
-        font-size: 12px;
+        font-size: 11px;
       }
       .grid {
         display: grid;
@@ -363,8 +363,6 @@
         text-transform: uppercase;
       }
 
-     
-
       .sidebar {
         grid-area: sidebar;
         background-color: var(--sidebar-color);
@@ -392,7 +390,7 @@
 
       .highlights,
       .education {
-        padding: 16px;
+        padding: 12px 16px;
       }
       .highlights {
         margin-top: 16px;
@@ -401,7 +399,7 @@
       }
       .tech {
         --highlight-border: var(--color-cyan-700);
-        --sidebar-icon:  var(--color-cyan-700);
+        --sidebar-icon: var(--color-cyan-700);
       }
       .education > div {
         margin-top: 12px;
@@ -409,7 +407,6 @@
       ul {
         list-style: none;
         padding: 0;
-        font-size: 14px;
         margin: 0;
         margin-top: 8px;
       }
@@ -419,7 +416,7 @@
         align-items: center;
       }
       ul li > span {
-        margin: 4px 0;
+        margin: 0;
         margin-right: 8px;
 
         padding: 4px;
@@ -427,10 +424,7 @@
         /* color: var(--sidebar-color); */
         /* background-color: var(--sidebar-icon); */
         color: var(--sidebar-icon);
-
-        /* font-size: 16px !important; */
       }
-
 
       .content {
         grid-area: content;
@@ -462,7 +456,7 @@
           var(--color-slate-200) 100%
         ); */
         padding: 16px;
-        border-radius: 8px; 
+        border-radius: 8px;
       }
       .about p {
         margin: 0px;
@@ -550,12 +544,22 @@
         border-left: none;
         /* background-color: var(--callout-color) */
       }
-      
+
+      ol {
+        margin: 0;
+        padding-left: 12px;
+      }
+      ol li {
+        margin-bottom: 4px;
+      }
+      ol li:last-child {
+        margin-bottom: 0;
+      }
+
       .footer {
         grid-area: footer;
         background-color: var(--header-color);
         color: var(--header-text);
-        font-size: 12px;
         display: flex;
         justify-content: space-evenly;
       }
@@ -578,6 +582,21 @@
         }
         .name {
           color: var(--color-stone-300);
+        }
+        .collapsed {
+          display: none !important;
+        }
+      }
+
+      .collapsed {
+        &.experience-section {
+          display: inline-block;
+        }
+        .experience-title {
+          border-radius: 4px !important;
+        }
+        .experience-description {
+          display: none;
         }
       }
     </style>
@@ -605,6 +624,10 @@
                 Founder with 9 figure exit
               </li>
               <li>
+                <span class="material-symbols-outlined"> group_add </span>
+                From 0 to dozens of direct reports
+              </li>
+              <li>
                 <span class="material-symbols-outlined"> reduce_capacity </span>
                 Managed 9 divisions
               </li>
@@ -625,6 +648,10 @@
                 Built and architected core tech
               </li>
               <li>
+                <span class="material-symbols-outlined"> recent_patient </span>
+                Still a top individual contributor
+              </li>
+              <li>
                 <span class="material-symbols-outlined">
                   sentiment_very_satisfied
                 </span>
@@ -633,6 +660,10 @@
               <li>
                 <span class="material-symbols-outlined"> school </span>
                 Graduated college at 17
+              </li>
+              <li>
+                <span class="material-symbols-outlined"> history </span>
+                Nearly 20 years experience
               </li>
             </ul>
           </div>
@@ -671,7 +702,7 @@
               </div>
               <small class="justify">
                 <span>Florida Atlantic University</span>
-                <span>2012</span>
+                <span><em>19 years old,</em> 2012</span>
               </small>
             </div>
             <div>
@@ -679,12 +710,22 @@
                 <span>Bachelor of Science</span><span>Computer Science</span>
               </div>
               <small class="justify">
-                <span>Florida Atlantic University</span><span>2010</span>
+                <span>Florida Atlantic University</span>
+                <span><em>17 years old,</em> 2010</span>
               </small>
             </div>
           </div>
-          <div class="education" style="margin-top: 16px">
+          <div class="education">
             <h2>Related Experience</h2>
+            <div>
+              <div class="justify">
+                <span>CTO & Cofounder</span><span>GovSpend</span>
+              </div>
+              <small class="justify">
+                <span>Started and sold a SaaS business</span>
+                <span>2011 - 2024</span>
+              </small>
+            </div>
             <div>
               <div class="justify">
                 <span>CTO & Contractor</span><span>Self Employed</span>
@@ -735,24 +776,113 @@
           </div>
           <div>
             <h2 class="section-title justify">
-              <span>Chief Technology Officer, GovSpend</span>
+              <span>Chief Technology Officer & Cofounder, GovSpend</span>
               <small>2011 - 2024</small>
             </h2>
             <div class="experience">
-              <div class="experience-section">
+              <div class="experience-section role">
                 <div class="experience-title">Role</div>
                 <div class="experience-description">
                   As CTO and cofounder of GovSpend (also known as SmartProcure),
-                  I was instrumental in the company’s growth from a concept to a
-                  9 figure private equity exit doing acquisitions of its own -
-                  managing 9 divisions. I was critical to our M&A activity -
-                  during evaluation, due diligence, and integration strategy. I
-                  set our product and technology roadmap and architected most of
-                  our projects. I grew developers from junior to senior and from
-                  ICs to team leads and directors.
+                  I was instrumental in our growth from a concept to a 9 figure
+                  private equity exit doing acquisitions of its own - managing 9
+                  divisions. I set the product and tech roadmap and architected
+                  most projects. I built our initial tech and remained a top
+                  contributor even as we matured. I was critical to our M&A
+                  activity - during evaluation, due diligence, and integration
+                  strategy. I grew developers from junior to senior and from ICs
+                  to team leads and directors.
                 </div>
               </div>
-              <div class="experience-section">
+              <div class="experience-section tech">
+                <div class="experience-title">Tech</div>
+                <div class="experience-description">
+                  <ol style="list-style-type: disc">
+                    <li>
+                      We built best-in-class, industry-leading technology with
+                      <strong
+                        >real time search and analytics on billions</strong
+                      >
+                      of records. It’s powered by Contexture, my open source
+                      toolkit with an advanced query editor, pivot table, in
+                      memory joins, and semantic (vector) search - but above
+                      all, a relentless focus on performance and user
+                      experience. It can ease users from a simple search box to
+                      one of the world’s fastest BI tools.
+                    </li>
+                    <li>
+                      We built thousands of web scrapers, a custom DSL with
+                      <strong>tens of thousands of extraction strategies</strong
+                      >, tons of backend jobs pulling API data, and an engine to
+                      automate tens of thousands of recurring public records
+                      requests. All with deep auditing and real time change
+                      notifications.
+                    </li>
+                    <li>
+                      We used <strong>state of the art AI models</strong> for
+                      classification, transcription, summarization, prediction,
+                      and so much more.
+                      <strong
+                        >Production AI at scale over billions of records</strong
+                      >
+                      is a unique challenge, so we used commercial foundation
+                      models, fine tuned, and even trained our own (BERT
+                      transformers).
+                    </li>
+                    <li>
+                      We built a fullstack web app using modern
+                      <code>javascript</code> and <code>typescript</code> in
+                      <code>nodejs</code> with <code>feathers</code> on the
+                      backend, <code>react</code> with <code>chakra</code> and
+                      <code>mobx</code> on the frontend,
+                      <code>socket.io</code> for realtime events,
+                      <code>temporal.io</code> for background jobs, and data in
+                      the latest verstions of <code>elasticsearch</code>,
+                      <code>mongo</code>, <code>redis</code>, and
+                      <code>cratedb</code>. Some file parsing logic was written
+                      in <code>c#</code>. Scrapers were written using
+                      <code>python</code>, <code>typescript</code>, and
+                      <code>mozenda</code>.
+                    </li>
+                  </ol>
+                  <!-- We built best-in-class, industry-leading technology with real
+                  time search and analytics on billions of records. It’s powered
+                  by Contexture, my open source toolkit with an advanced query
+                  editor, pivot table, in memory joins, and semantic (vector)
+                  search - but above all, a relentless focus on performance and
+                  user experience. It can ease users from a simple search box to
+                  one of the world’s most performant BI tools. We built
+                  thousands of web scrapers, a custom DSL with tens of thousands
+                  of extraction strategies, tons of backend jobs pulling API
+                  data, and an engine to automate tens of thousands of recurring
+                  public records requests. All with deep auditing and real time
+                  change notifications. We’re also leveraging state of the art
+                  AI models for things like classification, transcription,
+                  summarization, prediction, and so much more. -->
+                </div>
+              </div>
+              <div class="experience-section culture">
+                <div class="experience-title">Culture</div>
+                <div class="experience-description">
+                  I built a relaxed but high-performance culture - a startup
+                  with a dose of stability and bigger tech process. You need a
+                  reason for tech to be closed source - not permission to be
+                  open! Our open source code has over 10 million downloads. I
+                  created hackathons with one rule - you're not allowed to do
+                  your normal work. Besides peer review, we built a bot to
+                  automate best practices. Functional programming is big and we
+                  built futil, endorsed by lodash on their homepage. Our tech
+                  stack is kept up to date, and we're always exploring new tech.
+                  It’s tech nirvana.
+                  <a
+                    target="_blank"
+                    href="https://beforeyouapply.com/group/engineering-at-govspend"
+                  >
+                    beforeyouapply.com/group/engineering-at-govspend
+                  </a>
+                </div>
+              </div>
+              <div class="experience-section mission">
                 <div class="experience-title">Mission</div>
                 <div class="experience-description">
                   GovSpend provides public sector intelligence. It’s incredibly
@@ -768,64 +898,25 @@
                   spending.
                 </div>
               </div>
-              <div class="experience-section">
+              <div class="experience-section impact">
                 <div class="experience-title">Impact</div>
                 <div class="experience-description">
-                  We did incredible things at GovSpend, and I think we can
-                  really say we made the world at least a little better than we
-                  found it. We made a dent in the universe. We disrupted and
-                  improved government procurement. And at the start of the
-                  pandemic, we helped government to help a world that seemed to
-                  be in free fall. We’ve had a real social impact. But most of
-                  all, we’ve built an incredible team - with world-class
-                  engineers and the most talented people I’ve ever met.
-                </div>
-              </div>
-              <div class="experience-section">
-                <div class="experience-title">Tech</div>
-                <div class="experience-description">
-                  We built best-in-class, industry-leading technology with real
-                  time search and analytics on billions of records. It’s powered
-                  by Contexture, my open source toolkit with an advanced query
-                  editor, pivot table, in memory joins, and semantic (vector)
-                  search - but above all, a relentless focus on performance and
-                  user experience. It can ease users from a simple search box to
-                  one of the world’s most performant BI tools. We built
-                  thousands of web scrapers, a custom DSL with tens of thousands
-                  of extraction strategies, tons of backend jobs pulling API
-                  data, and an engine to automate tens of thousands of recurring
-                  public records requests. All with deep auditing and real time
-                  change notifications. We’re also leveraging state of the art
-                  AI models for things like classification, transcription,
-                  summarization, prediction, and so much more.
-                </div>
-              </div>
-              <div class="experience-section">
-                <div class="experience-title">Culture</div>
-                <div class="experience-description">
-                  I built a relaxed but high-performance culture - like a
-                  startup with a dose of stability and bigger tech process. You
-                  need a reason for tech to be closed source - not permission
-                  for it to be open! Our open source code has over 10 million
-                  downloads. I created hackathons with one rule - you're not
-                  allowed to do your normal work. Besides peer review, we built
-                  a bot to automate best practices. Functional programming is
-                  big and we built futil, endorsed by lodash on their homepage.
-                  Our data is in the latest versions of mongo, elastic, redis,
-                  and we're always exploring new tech (like cratedb). It’s tech
-                  nirvana.
-                  <a
-                    target="_blank"
-                    href="https://beforeyouapply.com/group/engineering-at-govspend"
-                  >
-                    https://beforeyouapply.com/group/engineering-at-govspend
-                  </a>
+                  We did incredible things at GovSpend and can really say we
+                  made the world better than we found it. We made a dent in the
+                  universe. We disrupted and improved government procurement.
+                  And at the start of the pandemic, we helped government to help
+                  a world in free fall. We had a real social impact. But most of
+                  all, we built an incredible team of world-class engineers and
+                  the most talented people I’ve ever met.
                 </div>
               </div>
             </div>
           </div>
           <em class="more-experience">
-            Other positions are at linkedin.com/in/samuelagreene
+            Other positions are at
+            <a target="_blank" href="http://www.linkedin.com/in/samuelagreene"
+              >linkedin.com/in/samuelagreene</a
+            >
           </em>
         </div>
         <div class="footer">
@@ -841,9 +932,10 @@
           </span>
           <span class="contact-info">
             <span class="material-symbols-outlined"> language </span>
-            <a target="_blank" href="http://samuelgreene.info">samuelgreene.info</a>
+            <a target="_blank" href="http://samuelgreene.info"
+              >samuelgreene.info</a
+            >
           </span>
-          
           <span class="contact-info">
             <span class="material-symbols-outlined"> mail </span>
             <a target="_blank" href="mailto:sam@samuelgreene.info">
@@ -859,5 +951,13 @@
         </div>
       </div>
     </div>
+    <script>
+      document.querySelectorAll('.experience-section').forEach(
+        elem =>
+          (elem.onclick = function () {
+            this.classList.toggle('collapsed')
+          })
+      )
+    </script>
   </body>
 </html>

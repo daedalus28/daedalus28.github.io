@@ -230,9 +230,14 @@
       }
 
       async function main() {
-        const { scene: engineBox } = await new GLTFLoader().loadAsync(
+        const { scene: engineBox } = new GLTFLoader().loadAsync(
           './obj.glb'
-        )
+        ).then(({ scene: engineBox }) => {
+          // Engine box
+          engineBox.scale.set(0.05, 0.05, 0.05)
+          scene.add(engineBox)
+          entities.push(entity(engineBox).add(entityRotation))
+        })
 
         const canvas = document.querySelector('#canvas')
 
@@ -309,11 +314,6 @@
           pointLight.position.set(...position)
           scene.add(pointLight)
         })
-
-        // Engine box
-        engineBox.scale.set(0.05, 0.05, 0.05)
-        scene.add(engineBox)
-        entities.push(entity(engineBox).add(entityRotation))
 
         // Cubes
         const geometry = [

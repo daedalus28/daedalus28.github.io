@@ -311,6 +311,9 @@
         width: 960px;
         margin: 16px auto;
         font-size: 11px;
+        /* Disable automatic text scaling that wrecks layout */
+        text-size-adjust: none;
+        -webkit-text-size-adjust: 100%;
       }
       .grid {
         display: grid;
